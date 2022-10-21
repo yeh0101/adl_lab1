@@ -1,0 +1,4 @@
+﻿  lab1.c
+C:\Users\yeamo\source\repos\ADL_lab1\ADL_lab1\lab1.c(25,8): warning C4013: 'print' undefined; assuming extern returning int
+lab1.obj : error LNK2019: unresolved external symbol _print referenced in function _factorial_recursive
+C:\Users\yeamo\source\repos\ADL_lab1\Debug\ADL_lab1.exe : fatal error LNK1120: 1 unresolved externals
