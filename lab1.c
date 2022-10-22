@@ -13,29 +13,53 @@ int factorial_iterative(int n){
 	return f;
 }
 
+
 //Recursive calculation
-long int factorial_recursive(int n) {
+void factorial_recursivemm(int n) {
 	//int stack[STACK_SIZE]= NULL;//init
-	if (n >= 1) {
-		n = n * factorial_recursive(n - 1);
-		push(stack, n);
-		printStack(stack);
-		return n;
-		
+	int n_fact = pop(stack);
+	if (n_fact >= 1) {
+		push(stack, n_fact - 1);
+		exit(1);
 	}
 	else {
-		return 1;
+		push(stack, 1);
+		//return 1;
+	}
+}
+
+
+//Recursive calculation
+void factorial_recursive(int nnjbnjn) {
+	//int stack[STACK_SIZE]= NULL;//init
+	int n_fact = pop(stack);
+	if (n_fact >= 1) {
+		push(stack, n_fact - 1);
+		factorial_recursive(n_fact - 1);
+		int result = pop(stack);
+		n_fact = n_fact * result;
+		push(stack, n_fact);
+		//printStack(stack);
+		//return n;
+	}
+	else {
+		push(stack, 1);
+		//return 1;
 	}
 }
 
 int main() {
-
 	//2.1 Implementing the two factorial functions
 	int num;
 	long int result;
+
+	initStack(stack);
 	printf("Please enter a number: ");
 	scanf("%d", &num);
-	result = factorial_recursive(num);
+	push(stack, num);
+	factorial_recursive(num);
+	result = pop(stack);
+	printStack(stack);
 	printf("%d factorial is %ld\n", num, result);
 	
 
